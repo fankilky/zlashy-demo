@@ -91,7 +91,7 @@ export default function Home() {
 
   return (
     <>
-      <div id={`session1`} className={`relative h-svh lg:h-[1600px] flex justify-center items-center lg:block overflow-hidden bg-[#387e78]`}>
+      <div id={`session1`} className={`relative h-svh lg:h-[2000px] flex justify-center items-center lg:block overflow-hidden bg-[#387e78]`}>
           <Image className={``} fill src={bgMobile} alt="bg-mobile" />
           <div className={`relative m-0 p-0 w-full h-40 lg:h-80 lg:mt-72`}>
             <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../session1/Living_your_8alance.svg')`}}></span>
@@ -111,12 +111,12 @@ export default function Home() {
               <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../session1/Bubble3.png')`}}></span>
             </div>
           </div>
-          <div id={`Bubble4`} className={`animate-wiggle absolute w-44 -left-3 bottom-28`}>
+          <div id={`Bubble4`} className={`animate-wiggle absolute w-44 -left-3 bottom-28 lg:w-[18rem] lg:left-[80rem] lg:bottom-[20rem]`}>
             <div className={`relative m-0 p-0 w-full h-80`}>
               <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../session1/Bubble4.png')`}}></span>
             </div>
           </div>
-          <div id={`Bubble5`} className={`animate-wiggle absolute w-48 right-14 -bottom-12`}>
+          <div id={`Bubble5`} className={`animate-wiggle absolute w-48 right-14 -bottom-12 lg:w-[20rem] lg:right-[80rem] lg:bottom-[3rem]`}>
             <div className={`relative m-0 p-0 w-full h-80`}>
               <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../session1/Bubble5.png')`}}></span>
             </div>
@@ -131,21 +131,39 @@ export default function Home() {
       </div>
       <div id={`phone`} ref={ref} className={`hidden lg:block relative py-8 bg-[#387e78]`}>
           <div className={`relative`}>
-            <Image className={`mx-0 my-auto`} objectFit="cover" style={{ width: '50%', height: 'auto' }} src={mobile1} alt="mobile1" />
+            <Image className={`my-0 mx-auto`} width={800} src={mobile1} alt="mobile1" />
           </div>
       </div>
       <div id={`triangle`} className={`relative py-8 lg:py-16 bg-[#387e78]`}>
-            <h3 className={`text-white text-center text-xl lg:text-5xl font-bold my-5`}>Dive into our wellness <br/> community of rewards</h3>
-            <div className={`block lg:hidden relative h-96 ml-20 mr-8`}>
-              <Image className={`aspect-[2547/2259]`} objectFit="contain" layout="fill" src={ecoSystem} alt="ecoSystem" />
-              <Image className={`absolute top-8 -left-12`} width={100} src={mobile2} alt="mobile2" />
-              <Image className={`absolute top-64 -left-32`} width={150} src={grass} alt="grass" />
-            </div>
-            <div className={`hidden lg:block relative mr-8 lg:h-[45rem] `}>
-              <Image className={`place-self-end mr-10 mt-10`} width={600} src={ecoSystem} alt="ecoSystem" />
-              <Image className={`absolute top-[13rem] left-[-8rem]`} width={550} src={grass} alt="grass" />
-              <Image className={`absolute top-[0rem] left-[5rem]`} width={400} src={mobile2} alt="mobile2" />
-            </div>
+        <Animation
+            id="triangle-heading"
+            animation="slideUp"
+            duration={800}
+            distance={100}
+            once={false} // Enable reverse animation
+            threshold={0.5} // Higher threshold for better control
+          >
+          <h3 className={`text-white text-center text-xl lg:text-5xl font-bold my-5`}>Dive into our wellness <br/> community of rewards</h3>
+        </Animation>
+        <Animation
+            id="triangle-heading"
+            animation="slideUp"
+            duration={800}
+            distance={100}
+            once={false} // Enable reverse animation
+            threshold={0.5} // Higher threshold for better control
+          >
+          <div className={`block lg:hidden relative h-96 ml-20 mr-8`}>
+            <Image className={`aspect-[2547/2259]`} objectFit="contain" layout="fill" src={ecoSystem} alt="ecoSystem" />
+            <Image className={`absolute top-8 -left-12`} width={100} src={mobile2} alt="mobile2" />
+            <Image className={`absolute top-64 -left-32`} width={150} src={grass} alt="grass" />
+          </div>
+          <div className={`hidden lg:block relative lg:h-[45rem] xl:mr-[30rem]`}>
+            <Image className={`place-self-end mr-10 mt-10`} width={800} src={ecoSystem} alt="ecoSystem" />
+            <Image className={`absolute top-[13rem] left-[-8rem]`} width={550} src={grass} alt="grass" />
+            <Image className={`absolute top-[0rem] left-[5rem]`} width={400} src={mobile2} alt="mobile2" />
+          </div>
+        </Animation>
       </div>
       <Image className={`bg-[#387e78]`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={sphere} alt="sphere" />
       <div id={`unlock-balance`} className={`relative h-44 flex flex-col items-center lg:mb-24`}>
@@ -337,7 +355,7 @@ export default function Home() {
       </div>
 
       <div className={`balance-path relative mt-32 px-5 bg-[#cddee6] py-10 flex flex-col justify-center items-center gap-3`}>
-          <h1 className={`text-2xl text-center`}>Leading a balanced path</h1>
+          <h1 className={`text-2xl text-center font-bold lg:text-5xl`}>Leading a balanced path</h1>
           <Image className={`lg:!w-[20%] my-0 mx-auto`} objectFit="contain" style={{ width: '40%', height: 'auto' }} src={dots} alt="dots" />
           <p className={`text-center`}>Stay tuned for these exciting features in our upcoming releases!</p>
           <div className={`grid grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 justify-center gap-3 mx-10 lg:gap-5 lg:mx-20 pb-10`}>
@@ -358,7 +376,7 @@ export default function Home() {
           </div>
       </div>
       <div className={`find-balance relative mt-32 mx-5 flex flex-col justify-center items-center gap-3`}>
-        <h1 className={`text-2xl text-center font-bold`}>Find your balance now</h1>
+        <h1 className={`text-2xl text-center font-bold lg:text-5xl`}>Find your balance now</h1>
         <Image className={`lg:!w-[20%] my-0 mx-auto`} objectFit="contain" style={{ width: '40%', height: 'auto' }} src={dots} alt="dots" />
         <p className={`text-center`}>Embrace a balanced life by joining the 8alance community.</p>
         <p className={`text-center underline text-[#387e78]`}>Download user guide</p>
