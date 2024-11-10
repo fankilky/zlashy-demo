@@ -15,6 +15,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.noto-sans {
-  font-family: var(--font-noto-sans);
+.poppins {
+  font-family: var(--font-poppins);
 }

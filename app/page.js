@@ -82,16 +82,19 @@ export default function Home() {
   return (
     <>
       <div className={`bg-[#387e78]`}>
-        <div id={`main`} className={`relative w-full h-full`}>
+        <div id={`main`} className={`relative w-full h-full animate-scaleDown [animation-timeline:view()] [animation-range: exit -200px] [transform-origin:bottom center;]`}>
           <Image className={`h-svh xl:hidden`} objectFit="contain" style={{ width: '100%'}} src={bgMobile} alt="bg-mobile" />
           <Image className={`hidden xl:block max-w-full`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={bg} alt="bg" />
           <div className={`absolute top-0 left-0 w-full h-dvh flex justify-center items-center`}>
             <Image className={`max-w-[50%] 2xl:max-w-[40%] 3xl:max-w-[30%]`} width={800} src={logo} alt="logo" />
           </div>
-          <div id={`bubbles`} className={`absolute top-0 left-0 w-full h-dvh overflow-x-hidden`}>
+          <div id={`bubbles`} className={`absolute top-0 left-0 w-full h-full overflow-x-hidden`}>
             <div className={`relative w-full h-full`}>
-              <Image id={`bubble1`} className={`animate-wiggle xl:animate-fadeOutDown xl:[animation-timeline:view(400px)] absolute top-24 right-3 max-w-36 xl:left-9 xl:top-36 xl:max-w-52 3xl:max-w-none`} width={350} src={bubble1} alt="bubble1" />
-              <Image id={`bubble2`} className={`animate-wiggle xl:animate-fadeOutDown xl:[animation-timeline:view(400px)] absolute bottom-36 -right-3 max-w-36 xl:-right-10 xl:bottom-80 xl:max-w-72 3xl:max-w-[34rem] 5xl:bottom-44 5xl:max-w-none`} width={700} src={bubble2} alt="bubble2" />
+              <Image id={`bubble1`} className={`animate-wiggle absolute max-w-36 top-24 right-3     xl:max-w-52 xl:left-9    xl:top-36     3xl:max-w-none 4xl:left-48 `} width={350} src={bubble1} alt="bubble1" />
+              <Image id={`bubble2`} className={`animate-wiggle absolute max-w-40 bottom-52 -right-3 xl:max-w-72 xl:-right-10 xl:top-[28rem]     3xl:max-w-[34rem] 3xl:top-[20rem] 4xl:top-40 4xl:max-w-none`} width={700} src={bubble2} alt="bubble2" />
+              <Image id={`bubble3`} className={`animate-wiggle absolute max-w-44 top-32 -left-4     xl:max-w-[25rem] xl:-left-24 xl:top-[35rem]  3xl:max-w-[30rem] 3xl:bottom-[unset] 3xl:top-[40rem] 4xl:max-w-[70%] 4xl:top-[35rem]`} width={700} src={bubble3} alt="bubble3" />
+              <Image id={`bubble4`} className={`animate-wiggle absolute max-w-44 bottom-32 -left-4  xl:max-w-60 xl:left-96 xl:bottom-[unset] xl:top-[45rem]  3xl:max-w-[28rem] 3xl:top-[65rem] 3xl:left-[38rem] 4xl:top-[70rem] 4xl:max-w-[35%]`} width={700} src={bubble4} alt="bubble4" />
+              <Image id={`bubble5`} className={`animate-wiggle absolute max-w-44 bottom-5 right-8   xl:max-w-60 xl:left-60 xl:right-[unset] xl:bottom-[unset] xl:top-[60rem]  3xl:max-w-[30rem] 3xl:top-[90rem] 4xl:top-[110rem] 4xl:max-w-[37%]`} width={700} src={bubble5} alt="bubble5" />
             </div>
           </div>
         </div>
@@ -116,7 +119,6 @@ export default function Home() {
           <button className={`text-[#a6a6a6] py-3 px-5 rounded-full `}>To Learn & Earn</button>
         </div>
       </div>
-
       <div className={`flex flex-col gap-20 my-10`}>
         <CardLeft 
           name="step-challenge"
@@ -227,9 +229,9 @@ export default function Home() {
       <div className={`download relative mt-32 mx-16 lg:mx-32`}>
         <div className={`bg-[#426d8c] rounded-3xl grid grid-row-2 lg:grid-cols-2 lg:rounded-[4.5rem]`}>
           <div className={`col-span-1 order-last lg:order-first place-content-end`}>
-            <Image className={``} objectFit="contain" style={{ width: '100%', height: 'auto' }} src={downloadPhone} alt="downloadPhone" />
+            <Image className={`animate-fadeInRight [animation-timeline:view(250px)]`} objectFit="contain" style={{ width: '100%', height: 'auto' }} src={downloadPhone} alt="downloadPhone" />
           </div>
-          <div className={`col-span-1 z-10 mx-10 my-5 text-white text-center flex flex-col justify-center gap-5`}>
+          <div className={`col-span-1 z-10 mx-10 my-5 text-white text-center flex flex-col justify-center gap-5 animate-fadeInUp [animation-timeline:view()]`}>
             <div className={`text-base lg:text-2xl`}>Step 1</div>
             <div className={`text-2xl lg:text-5xl font-bold`}>Downlad 8alance</div>
             <div className={`text-sm lg:text-lg lg:mb-10`}>Currently open to FTLife and NWS users only. Stay tuned for future updates!</div>
@@ -276,8 +278,7 @@ export default function Home() {
         </div>
     
       </div>
-
-      </>
+    </>
 
   );
 }
@@ -318,8 +319,8 @@ function CardRight({ name, mobileBg, mobileElement1, mobileKeyImage, bg, element
       <Image className={`animate-fadeInUp [animation-timeline:view(250px)] opacity-0 hidden lg:block absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={element2} alt={`${name}-element2`} />
       <div className="absolute top-0 left-0 grid grid-cols-5 grid-rows-4 gap-4 w-full h-full">
         <div className="col-span-2 row-span-4 col-start-4">
-            <Image className={`animate-fadeInLeft [animation-timeline:view(250px)] [animation-range: cover 10% cover 45%] opacity-0 block lg:hidden`} fill src={mobileKeyImage} alt={`${name}-key-image-mobile`} />
-            <Image className={`animate-fadeInLeft [animation-timeline:view(250px)] [animation-range: cover 10% cover 45%] opacity-0 hidden lg:block`} fill src={keyImage} alt={`${name}-key-image`} />
+            <Image className={`animate-fadeInLeft [animation-timeline:view(250px)] [animation-range: cover 10% cover 45%] opacity-0 block lg:hidden`} fill sizes="cover" src={mobileKeyImage} alt={`${name}-key-image-mobile`} />
+            <Image className={`animate-fadeInLeft [animation-timeline:view(250px)] [animation-range: cover 10% cover 45%] opacity-0 hidden lg:block`} fill sizes="cover" src={keyImage} alt={`${name}-key-image`} />
           </div>
           <div className="animate-fadeInUp [animation-timeline:view()] col-span-3 row-start-2 ml-5">
             <div className={`bg-white rounded-full py-1 px-7 inline-block text-sm`}>{tag}</div>

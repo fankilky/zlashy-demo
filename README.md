@@ -1,3 +1,10 @@
+## 2024-11-11
+Based on the comment provided, I have revised the code.
+- Font Family: Poppins
+- ⁠Animation: I have tried the best to make the animation most look like the demo video, but the animation on the desktop version is not ideal (the bubble part).
+- Responsive: I revised the responsive design for 360px to 1920px.
+
+## 2024-11-06
 This is the practical test for interviewing Zlashy.
 
 Hi Terry,

@@ -1,11 +1,11 @@
 'use client';
 import "./globals.css";
 import Header from "@/components/header";
-import { Noto_Sans } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 
-const Noto_Sans_init = Noto_Sans({
+const Poppins_init = Poppins({
   subsets: ['latin'],
-  variable: "--font-noto-sans",
+  variable: "--font-poppins",
   weight: ["400" , "700", "900"],
 });
 
@@ -13,7 +13,7 @@ const Noto_Sans_init = Noto_Sans({
 export default function RootLayout({ children }) {
   return (
       <html lang="en">
-        <body className={`${Noto_Sans_init.variable} relative overflow-x-hidden noto-sans`} >
+        <body className={`${Poppins_init.variable} relative overflow-x-hidden poppins`} >
           <Header />
           {children}
         </body>

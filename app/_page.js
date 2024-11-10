@@ -69,14 +69,7 @@ import footerLinkedin from "../public/footer/Linkedin.png";
 import footerMail from "../public/footer/Mail.svg";
 import footerMap from "../public/footer/Map_Pin.svg";
 
-import { Parallax } from 'react-scroll-parallax';
-import { useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
-import Animation from "@/components/animation";
-
 export default function Home() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
 
   // useEffect(() => { 
   //   window.addEventListener('scroll', () => {
@@ -94,65 +87,47 @@ export default function Home() {
       <div id={`session1`} className={`relative h-svh lg:h-[2000px] flex justify-center items-center lg:block overflow-hidden bg-[#387e78]`}>
           <Image className={``} fill src={bgMobile} alt="bg-mobile" />
           <div className={`relative m-0 p-0 w-full h-40 lg:h-80 lg:mt-72`}>
-            <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../session1/Living_your_8alance.svg')`}}></span>
+            <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../landing/Living_your_8alance.svg')`}}></span>
           </div>
           <div id={`Bubble1`} className={`animate-wiggle absolute w-40 right-3 top-12 lg:w-96 lg:left-0 lg:top-36 `}>
             <div className={`relative m-0 p-0 w-full h-80`}>
-              <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../session1/Bubble1.png')`}}></span>
+              <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../landing/Bubble1.png')`}}></span>
             </div>
           </div>
           <div id={`Bubble2`} className={`animate-wiggle absolute w-48 -right-3 bottom-36 lg:w-[35rem] lg:-right-10 lg:bottom-[45rem]`}>
             <div className={`relative m-0 p-0 w-full h-80 lg:h-[35rem]`}>
-              <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../session1/Bubble2.png')`}}></span>
+              <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../landing/Bubble2.png')`}}></span>
             </div>
           </div>
           <div id={`Bubble3`} className={`animate-wiggle absolute w-48 -left-2 top-24 lg:w-[30rem] lg:-left-20 lg:top-[45rem]`}>
             <div className={`relative m-0 p-0 w-full h-80 lg:h-[30rem]`}>
-              <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../session1/Bubble3.png')`}}></span>
+              <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../landing/Bubble3.png')`}}></span>
             </div>
           </div>
           <div id={`Bubble4`} className={`animate-wiggle absolute w-44 -left-3 bottom-28 lg:w-[18rem] lg:left-[80rem] lg:bottom-[20rem]`}>
             <div className={`relative m-0 p-0 w-full h-80`}>
-              <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../session1/Bubble4.png')`}}></span>
+              <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../landing/Bubble4.png')`}}></span>
             </div>
           </div>
           <div id={`Bubble5`} className={`animate-wiggle absolute w-48 right-14 -bottom-12 lg:w-[20rem] lg:right-[80rem] lg:bottom-[3rem]`}>
             <div className={`relative m-0 p-0 w-full h-80`}>
-              <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../session1/Bubble5.png')`}}></span>
+              <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../landing/Bubble5.png')`}}></span>
             </div>
           </div>    
-      </div>
-      <div id={`phone`} ref={ref} className={`block lg:hidden relative py-8 bg-[#387e78]`}>
-        <Parallax translateX={[0, -100, -200]} translateY={[0, 20, 10]} speed={-300} opacity={[1,0]} rotateX={[0, -45]}>
+      </div>—
+      {/* <div id={`phone`}  className={`block lg:hidden relative py-8 bg-[#387e78]`}>
           <div className={`relative aspect-[1398/840]`}>
             <Image className={``} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={mobile1} alt="mobile1" />
           </div>
-        </Parallax>
       </div>
-      <div id={`phone`} ref={ref} className={`hidden lg:block relative py-8 bg-[#387e78]`}>
+      <div id={`phone`} className={`hidden lg:block relative py-8 bg-[#387e78]`}>
           <div className={`relative`}>
             <Image className={`my-0 mx-auto`} width={800} src={mobile1} alt="mobile1" />
           </div>
       </div>
       <div id={`triangle`} className={`relative py-8 lg:py-16 bg-[#387e78]`}>
-        <Animation
-            id="triangle-heading"
-            animation="slideUp"
-            duration={800}
-            distance={100}
-            once={false} // Enable reverse animation
-            threshold={0.5} // Higher threshold for better control
-          >
+
           <h3 className={`text-white text-center text-xl lg:text-5xl font-bold my-5`}>Dive into our wellness <br/> community of rewards</h3>
-        </Animation>
-        <Animation
-            id="triangle-heading"
-            animation="slideUp"
-            duration={800}
-            distance={100}
-            once={false} // Enable reverse animation
-            threshold={0.5} // Higher threshold for better control
-          >
           <div className={`block lg:hidden relative h-96 ml-20 mr-8`}>
             <Image className={`aspect-[2547/2259]`} objectFit="contain" layout="fill" src={ecoSystem} alt="ecoSystem" />
             <Image className={`absolute top-8 -left-12`} width={100} src={mobile2} alt="mobile2" />
@@ -163,7 +138,6 @@ export default function Home() {
             <Image className={`absolute top-[13rem] left-[-8rem]`} width={550} src={grass} alt="grass" />
             <Image className={`absolute top-[0rem] left-[5rem]`} width={400} src={mobile2} alt="mobile2" />
           </div>
-        </Animation>
       </div>
       <Image className={`bg-[#387e78]`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={sphere} alt="sphere" />
       <div id={`unlock-balance`} className={`relative h-44 flex flex-col items-center lg:mb-24`}>
@@ -173,11 +147,11 @@ export default function Home() {
           <button className={`bg-[#387e78] text-white py-3 px-8 rounded-full`}>To Prosper</button>
           <button className={`text-[#a6a6a6] py-3 px-5 rounded-full `}>To Learn & Earn</button>
         </div>
-      </div>
+      </div> */}
 
 
       {/* Mobile */}
-      <div className={`flex flex-col gap-20 my-10`}>
+      {/* <div className={`flex flex-col gap-20 my-10`}>
         <Animation
           id="step-challenge"
           animation="slideUp"
@@ -432,7 +406,7 @@ export default function Home() {
             <div className="col-span-3 row-start-4 lg:col-span-2 lg:col-start-5 lg:row-start-2 text-xs content-center">@2024 En-Novelty Limited</div>
         </div>
     
-      </div>
+      </div> */}
     </>
 
   );

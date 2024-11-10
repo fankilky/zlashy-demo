@@ -22,19 +22,16 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-      backgroundImage: {
-        'desktop': "url('/bg/Background_Desktop.png')",
-        'mobile': "url('/bg/Background_Green.png')",
-      },
       keyframes: {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)'},
           '10%, 90%': { transform: 'rotate(-3deg)'},
           '50%': { transform: 'rotate(3deg)' },
         },
-        fadeOutDown: {
-          '0%': { opacity: 0},
-          '100%': { opacity: 1}
+        scaleDown: {
+          '0%': { transform: 'scale(1)', opacity: 1},
+          '50%': { transform: 'scale(1)', opacity: 1},
+          '100%': { transform: 'scale(0) translateY(300px)', opacity: 0 , transformOrigin: 'bottom'}
         },
         fadeInLeft: {
           '0%': { transform: 'translateX(50%)', opacity: 0 },
@@ -73,7 +70,8 @@ module.exports = {
       },
       animation: {
         wiggle: 'wiggle 2.5s ease-in-out infinite ',
-        fadeOutDown: 'fadeOutDown 1s ease-in-out', // for bubble
+        scaleDown: 'scaleDown linear',
+        fadeOutDown1: 'fadeOutDown1 1s ease-in-out', // for bubble
         fadeInLeft: 'fadeInLeft linear', // for session
         fadeInUp: 'fadeInUp linear', 
         fadeInRight: 'fadeInRight linear' ,
@@ -83,6 +81,3 @@ module.exports = {
   },
   plugins: [],
 };
-//animate-fadeInLeft [animation-timeline:view(250px)]
-
-//animate-fadeInLeft [animation-timeline:view()] odd animation bg
