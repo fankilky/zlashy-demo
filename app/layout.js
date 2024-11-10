@@ -2,7 +2,6 @@
 import "./globals.css";
 import Header from "@/components/header";
 import { Noto_Sans } from 'next/font/google';
-import { ParallaxProvider } from 'react-scroll-parallax';
 
 const Noto_Sans_init = Noto_Sans({
   subsets: ['latin'],
@@ -14,9 +13,9 @@ const Noto_Sans_init = Noto_Sans({
 export default function RootLayout({ children }) {
   return (
       <html lang="en">
-        <body className={`${Noto_Sans_init.variable} overflow-x-hidden noto-sans`} >
+        <body className={`${Noto_Sans_init.variable} relative overflow-x-hidden noto-sans`} >
           <Header />
-          <ParallaxProvider>{children}</ParallaxProvider>
+          {children}
         </body>
       </html>
   );

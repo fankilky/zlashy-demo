@@ -1,6 +1,15 @@
 'use client';
 import Image from "next/image";
 import bgMobile from "../public/bg/Background_Green.png";
+import bg from "../public/bg/Background_Desktop.png";
+
+import logo from "../public/landing/Living_your_8alance.svg";
+import bubble1 from "../public/landing/Bubble1.png";
+import bubble2 from "../public/landing/Bubble2.png";
+import bubble3 from "../public/landing/Bubble3.png";
+import bubble4 from "../public/landing/Bubble4.png";
+import bubble5 from "../public/landing/Bubble5.png";
+
 import mobile1 from "../public/wellness-community/Mobile1_EN.png";
 import mobile2 from "../public/wellness-community/Mobile2_EN.png";
 import grass from "../public/wellness-community/Grass.png";
@@ -69,101 +78,34 @@ import footerLinkedin from "../public/footer/Linkedin.png";
 import footerMail from "../public/footer/Mail.svg";
 import footerMap from "../public/footer/Map_Pin.svg";
 
-import { Parallax } from 'react-scroll-parallax';
-import { useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
-import Animation from "@/components/animation";
-
 export default function Home() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  // useEffect(() => { 
-  //   window.addEventListener('scroll', () => {
-  //       const currentScroll = window.scrollY;
-  //       //console.log(currentScroll)
-  //       console.log(document.getElementById('session3').scrollHeight)
-  //       if (currentScroll >= document.body.scrollHeight - window.innerHeight) {
-            
-  //       }
-  //   });
-  // },[]);
-
   return (
     <>
-      <div id={`session1`} className={`relative h-svh lg:h-[2000px] flex justify-center items-center lg:block overflow-hidden bg-[#387e78]`}>
-          <Image className={``} fill src={bgMobile} alt="bg-mobile" />
-          <div className={`relative m-0 p-0 w-full h-40 lg:h-80 lg:mt-72`}>
-            <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../session1/Living_your_8alance.svg')`}}></span>
+      <div className={`bg-[#387e78]`}>
+        <div id={`main`} className={`relative w-full h-full`}>
+          <Image className={`h-svh xl:hidden`} objectFit="contain" style={{ width: '100%'}} src={bgMobile} alt="bg-mobile" />
+          <Image className={`hidden xl:block max-w-full`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={bg} alt="bg" />
+          <div className={`absolute top-0 left-0 w-full h-dvh flex justify-center items-center`}>
+            <Image className={`max-w-[50%] 2xl:max-w-[40%] 3xl:max-w-[30%]`} width={800} src={logo} alt="logo" />
           </div>
-          <div id={`Bubble1`} className={`animate-wiggle absolute w-40 right-3 top-12 lg:w-96 lg:left-0 lg:top-36 `}>
-            <div className={`relative m-0 p-0 w-full h-80`}>
-              <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../session1/Bubble1.png')`}}></span>
+          <div id={`bubbles`} className={`absolute top-0 left-0 w-full h-dvh overflow-x-hidden`}>
+            <div className={`relative w-full h-full`}>
+              <Image id={`bubble1`} className={`animate-wiggle xl:animate-fadeOutDown xl:[animation-timeline:view(400px)] absolute top-24 right-3 max-w-36 xl:left-9 xl:top-36 xl:max-w-52 3xl:max-w-none`} width={350} src={bubble1} alt="bubble1" />
+              <Image id={`bubble2`} className={`animate-wiggle xl:animate-fadeOutDown xl:[animation-timeline:view(400px)] absolute bottom-36 -right-3 max-w-36 xl:-right-10 xl:bottom-80 xl:max-w-72 3xl:max-w-[34rem] 5xl:bottom-44 5xl:max-w-none`} width={700} src={bubble2} alt="bubble2" />
             </div>
           </div>
-          <div id={`Bubble2`} className={`animate-wiggle absolute w-48 -right-3 bottom-36 lg:w-[35rem] lg:-right-10 lg:bottom-[45rem]`}>
-            <div className={`relative m-0 p-0 w-full h-80 lg:h-[35rem]`}>
-              <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../session1/Bubble2.png')`}}></span>
+        </div>
+        <div id={`phone`} className={`relative w-full h-full bg-[#387e78]`}>
+          <Image className={`animate-phoneFadeOut [animation-timeline:view(50%)] [animation-range: cover 50% cover 100%] max-w-full mx-auto my-0`} width={800} src={mobile1} alt="mobile1" />
+          <div id={`community-of-rewards`} className={`relative `}>
+            <h3 className={`animate-fadeInUp [animation-timeline:view()] text-white text-center text-xl lg:text-3xl xl:text-5xl font-bold my-10 xl:my-20`}>Dive into our wellness <br/> community of rewards</h3>
+            <div id={`triangle`} className={`py-24`}>
+              <Image className={`animate-fadeInUp [animation-timeline:view()] [animation-range: cover 0% cover 30%] max-w-[70%] xl:max-w-[80%] 3xl:max-w-none place-self-end 3xl:place-self-center 3xl:ml-80`} width={800} src={ecoSystem} alt={`ecoSystem`} />
+              <Image className={`animate-fadeInUp [animation-timeline:view()] [animation-range: cover 10% cover 45%] max-w-[40%] 3xl:max-w-[50%] 5xl:max-w-none absolute bottom-11 -left-8 3xl:-left-60`} width={700} src={grass} alt={`grass`} />
+              <Image className={`animate-fadeInUp [animation-timeline:view()] [animation-range: cover 10% cover 45%] max-w-[30%] 4xl:max-w-[20%] 5xl:max-w-none absolute top-40 left-6 4xl:top-60 4xl:left-40`} width={500} src={mobile2} alt={`mobile2`} />
             </div>
           </div>
-          <div id={`Bubble3`} className={`animate-wiggle absolute w-48 -left-2 top-24 lg:w-[30rem] lg:-left-20 lg:top-[45rem]`}>
-            <div className={`relative m-0 p-0 w-full h-80 lg:h-[30rem]`}>
-              <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../session1/Bubble3.png')`}}></span>
-            </div>
-          </div>
-          <div id={`Bubble4`} className={`animate-wiggle absolute w-44 -left-3 bottom-28 lg:w-[18rem] lg:left-[80rem] lg:bottom-[20rem]`}>
-            <div className={`relative m-0 p-0 w-full h-80`}>
-              <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../session1/Bubble4.png')`}}></span>
-            </div>
-          </div>
-          <div id={`Bubble5`} className={`animate-wiggle absolute w-48 right-14 -bottom-12 lg:w-[20rem] lg:right-[80rem] lg:bottom-[3rem]`}>
-            <div className={`relative m-0 p-0 w-full h-80`}>
-              <span className={`absolute top-0 left-0 w-full h-full bg-no-repeat bg-contain bg-center`} style={{ backgroundImage: `url('../session1/Bubble5.png')`}}></span>
-            </div>
-          </div>    
-      </div>
-      <div id={`phone`} ref={ref} className={`block lg:hidden relative py-8 bg-[#387e78]`}>
-        <Parallax translateX={[0, -100, -200]} translateY={[0, 20, 10]} speed={-300} opacity={[1,0]} rotateX={[0, -45]}>
-          <div className={`relative aspect-[1398/840]`}>
-            <Image className={``} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={mobile1} alt="mobile1" />
-          </div>
-        </Parallax>
-      </div>
-      <div id={`phone`} ref={ref} className={`hidden lg:block relative py-8 bg-[#387e78]`}>
-          <div className={`relative`}>
-            <Image className={`my-0 mx-auto`} width={800} src={mobile1} alt="mobile1" />
-          </div>
-      </div>
-      <div id={`triangle`} className={`relative py-8 lg:py-16 bg-[#387e78]`}>
-        <Animation
-            id="triangle-heading"
-            animation="slideUp"
-            duration={800}
-            distance={100}
-            once={false} // Enable reverse animation
-            threshold={0.5} // Higher threshold for better control
-          >
-          <h3 className={`text-white text-center text-xl lg:text-5xl font-bold my-5`}>Dive into our wellness <br/> community of rewards</h3>
-        </Animation>
-        <Animation
-            id="triangle-heading"
-            animation="slideUp"
-            duration={800}
-            distance={100}
-            once={false} // Enable reverse animation
-            threshold={0.5} // Higher threshold for better control
-          >
-          <div className={`block lg:hidden relative h-96 ml-20 mr-8`}>
-            <Image className={`aspect-[2547/2259]`} objectFit="contain" layout="fill" src={ecoSystem} alt="ecoSystem" />
-            <Image className={`absolute top-8 -left-12`} width={100} src={mobile2} alt="mobile2" />
-            <Image className={`absolute top-64 -left-32`} width={150} src={grass} alt="grass" />
-          </div>
-          <div className={`hidden lg:block relative lg:h-[45rem] xl:mr-[30rem]`}>
-            <Image className={`place-self-end mr-10 mt-10`} width={800} src={ecoSystem} alt="ecoSystem" />
-            <Image className={`absolute top-[13rem] left-[-8rem]`} width={550} src={grass} alt="grass" />
-            <Image className={`absolute top-[0rem] left-[5rem]`} width={400} src={mobile2} alt="mobile2" />
-          </div>
-        </Animation>
+        </div>
       </div>
       <Image className={`bg-[#387e78]`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={sphere} alt="sphere" />
       <div id={`unlock-balance`} className={`relative h-44 flex flex-col items-center lg:mb-24`}>
@@ -175,198 +117,99 @@ export default function Home() {
         </div>
       </div>
 
-
-      {/* Mobile */}
       <div className={`flex flex-col gap-20 my-10`}>
-        <Animation
-          id="step-challenge"
-          animation="slideUp"
-          duration={800}
-          distance={100}
-          once={false} // Enable reverse animation
-          threshold={0.5} // Higher threshold for better control
-        >
-        <div className={`w-full relative`}>
-          <Image className={`block lg:hidden`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={stepcounterBgMobile} alt="stepcounterBgMobile" />
-          <Image className={`block lg:hidden absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={stepcounterDollMobile} alt="stepcounterDollMobile" />
-
-          <Image className={`hidden lg:block `} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={stepcounterBg} alt="stepcounterBg" />
-          <Image className={`hidden lg:block absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={stepcounterHill} alt="stepcounterHill" />
-          <Image className={`hidden lg:block absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={stepcounterDoll} alt="stepcounterDoll" />
-          <div className="absolute top-0 left-0 grid grid-cols-5 grid-rows-4 gap-4 w-full h-full">
-              <div className="col-span-2 row-span-4 ">
-                <Image className={`block lg:hidden`} fill src={stepcounterPhoneMobile} alt="stepcounterPhoneMobile" />
-                <Image className={`hidden lg:block`} fill src={stepcounterPhone} alt="stepcounterPhone" />
-              </div>
-              <div className="col-span-3 col-start-3 row-start-2">
-                <div className={`bg-white rounded-full py-1 px-7 inline-block text-sm`}>Fitness</div>
-                <h2 className={`font-extrabold text-3xl`}>Step Challenges</h2>
-                <p className={`text-sm`}>Embark on a GPS-based ESG adventure with Adventure Hunt ( and the soon-to-come Eco Hunt ) around Hong Kong. Track your daily steps using Step Counter to achieve your health goals.</p>
-              </div>
-          </div>
-        </div>
-        </Animation>
-
-        <Animation
-          id="vital-scanning"
-          animation="slideUp"
-          duration={800}
-          distance={100}
-          once={false} // Enable reverse animation
-          threshold={0.5} // Higher threshold for better control
-        >
-        <div className={`w-full relative`}>
-          <Image className={`block lg:hidden `} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={vitalScanningBgMobile} alt="vitalScanningBgMobile" />
-          <Image className={`block lg:hidden absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={vitalScanningMenMobile} alt="vitalScanningMenMobile" />
-
-          <Image className={`hidden lg:block`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={vitalScanningBg} alt="vitalScanningBg" />
-          <Image className={`hidden lg:block absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={vitalScanningGraph} alt="vitalScanningGraph" />
-          <Image className={`hidden lg:block absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={vitalScanningMen} alt="vitalScanningMen" />
-
-          <div className="absolute top-0 left-0 grid grid-cols-5 grid-rows-4 gap-4 w-full h-full">
-              <div className="col-span-2 row-span-4 col-start-4">
-                <Image className={`block lg:hidden`} fill src={vitalScanningPhoneMobile} alt="vitalScanningPhoneMobile" />
-                <Image className={`hidden lg:block`} fill src={vitalScanningPhone} alt="vitalScanningPhone" />
-              </div>
-              <div className="col-span-3 row-start-2 ml-5">
-                <div className={`bg-white rounded-full py-1 px-7 inline-block text-sm`}>Monitor</div>
-                <h2 className={`font-extrabold text-3xl`}>Daily vital scan</h2>
-                <p className={`text-sm`}>Keep track of your health scoore every day to improve wellness over time.</p>
-              </div>
-          </div>
-        </div>
-        </Animation>
-
-        <Animation
-          id="deskercise"
-          animation="slideUp"
-          duration={800}
-          distance={100}
-          once={false} // Enable reverse animation
-          threshold={0.5} // Higher threshold for better control
-        >
-        <div className={`w-full relative`}>
-          <Image className={`block lg:hidden`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={deskerciseBgMobile} alt="deskerciseBgMobile" />
-          <Image className={`block lg:hidden absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={deskerciseWomenMobile} alt="deskerciseWomenMobile" />
-
-          <Image className={`hidden lg:block`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={deskerciseBg} alt="deskerciseBg" />
-          <Image className={`hidden lg:block absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={deskerciseDog} alt="deskerciseDog" />
-          <Image className={`hidden lg:block absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={deskerciseWomen} alt="deskerciseWomen" />
-          <div className="absolute top-0 left-0 grid grid-cols-5 grid-rows-4 gap-4 w-full h-full">
-              <div className="col-span-2 row-span-4 ">
-                <Image className={`block lg:hidden`} fill src={deskercisePhoneMobile} alt="deskercisePhoneMobile" />
-                <Image className={`hidden lg:block`} fill src={deskercisePhone} alt="deskercisePhone" />
-              </div>
-              <div className="col-span-3 col-start-3 row-start-2">
-                <div className={`bg-white rounded-full py-1 px-7 inline-block text-sm`}>Stretch</div>
-                <h2 className={`font-extrabold text-3xl`}>Deskercise</h2>
-                <p className={`text-sm`}>Take your pocket stretch trainer with you anywhere to bid farewell to tight shoulders and neck.</p>
-              </div>
-          </div>
-        </div>
-        </Animation>
-
-        <Animation
-          id="water-tracker"
-          animation="slideUp"
-          duration={800}
-          distance={100}
-          once={false} // Enable reverse animation
-          threshold={0.5} // Higher threshold for better control
-        >
-          <div className={`w-full relative`}>
-            <Image className={`block lg:hidden`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={waterTrackerBgMobile} alt="waterTrackerBgMobile" />
-            <Image className={`block lg:hidden absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={waterTrackerMenFlowerMobile} alt="waterTrackerMenFlowerMobile" />
-
-            <Image className={`hidden lg:block`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={waterTrackerBg} alt="waterTrackerBg" />
-            <Image className={`hidden lg:block absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={waterTrackerMenFlower} alt="waterTrackerMenFlower" />
-            <Image className={`hidden lg:block absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={waterTrackerWatering} alt="waterTrackerWatering" />
-            <div className="absolute top-0 left-0 grid grid-cols-5 grid-rows-4 gap-4 w-full h-full">
-                <div className="col-span-2 row-span-4 col-start-4">
-                  <Image className={`block lg:hidden`} fill src={waterTrackerPhoneMobile} alt="waterTrackerPhoneMobile" />
-                  <Image className={`hidden lg:block`} fill src={waterTrackerPhone} alt="waterTrackerPhone" />
-                </div>
-                <div className="col-span-3 row-start-2 ml-5">
-                  <div className={`bg-white rounded-full py-1 px-7 inline-block text-sm`}>Hydration</div>
-                  <h2 className={`font-extrabold text-3xl`}>Water Tracker</h2>
-                  <p className={`text-sm`}>Receive periodic reminders for hydration breaks to stay active throughtout the day.</p>
-                </div>
-            </div>
-          </div>
-        </Animation>
-
-        <Animation
-          id="mindful-pause"
-          animation="slideUp"
-          duration={800}
-          distance={100}
-          once={false} // Enable reverse animation
-          threshold={0.5} // Higher threshold for better control
-        >        
-          <div className={`w-full relative`}>
-            <Image className={`block lg:hidden`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={mindfulPauseBgMobile} alt="mindfulPauseBgMobile" />
-            <Image className={`block lg:hidden absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={mindfulPauseMenMobile} alt="mindfulPauseMenMobile" />
-
-            <Image className={`hidden lg:block`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={mindfulPauseBg} alt="mindfulPauseBg" />
-            <Image className={`hidden lg:block absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={mindfulPauseMen} alt="mindfulPauseMen" />
-            <Image className={`hidden lg:block absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={mindfulPauseWomen} alt="mindfulPauseWomen" />
-            <div className="absolute top-0 left-0 grid grid-cols-5 grid-rows-4 gap-4 w-full h-full">
-                <div className="col-span-2 row-span-4 ">
-                  <Image className={`block lg:hidden`} fill src={mindfulPausePhoneMobile} alt="mindfulPausePhoneMobile" />
-                  <Image className={`hidden lg:block`} fill src={mindfulPausePhone} alt="mindfulPausePhone" />
-                </div>
-                <div className="col-span-3 col-start-3 row-start-2">
-                  <div className={`bg-white rounded-full py-1 px-7 inline-block text-sm`}>Breathe</div>
-                  <h2 className={`font-extrabold text-3xl`}>Mindful Pause</h2>
-                  <p className={`text-sm`}>Take conscious control of your breathe to regulate your mind and alleviate stress.</p>
-                </div>
-            </div>
-          </div>
-        </Animation>
-
-        <Animation
-          id="feel-good"
-          animation="slideUp"
-          duration={800}
-          distance={100}
-          once={false} // Enable reverse animation
-          threshold={0.5} // Higher threshold for better control
-        > 
-          <div className={`w-full relative`}>
-            <Image className={`block lg:hidden`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={feelGoodBgMobile} alt="feelGoodBgMobile" />
-            <Image className={`block lg:hidden absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={feelGoodPlaylistMobile} alt="feelGoodPlaylistMobile" />
-
-            <Image className={`hidden lg:block`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={feelGoodBg} alt="feelGoodBg" />
-            <Image className={`hidden lg:block absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={feelGoodPlaylist} alt="feelGoodPlaylist" />
-            <Image className={`hidden lg:block absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={feelGoodBee} alt="feelGoodBee" />
-            <div className="absolute top-0 left-0 grid grid-cols-5 grid-rows-4 gap-4 w-full h-full">
-                <div className="col-span-2 row-span-4 col-start-4">
-                  <Image className={`block lg:hidden`} fill src={waterTrackerPhoneMobile} alt="waterTrackerPhoneMobile" />
-                  <Image className={`hidden lg:block`} fill src={waterTrackerPhone} alt="waterTrackerPhone" />
-                </div>
-                <div className="col-span-3 row-start-2 ml-5">
-                  <div className={`bg-white rounded-full py-1 px-7 inline-block text-sm`}>Hydration</div>
-                  <h2 className={`font-extrabold text-3xl`}>Water Tracker</h2>
-                  <p className={`text-sm`}>Receive periodic reminders for hydration breaks to stay active throughtout the day.</p>
-                </div>
-            </div>
-          </div>
-        </Animation>
+        <CardLeft 
+          name="step-challenge"
+          mobileBg={stepcounterBgMobile}
+          mobileElement1={stepcounterDollMobile}
+          bg={stepcounterBg}
+          element1={stepcounterHill}
+          element2={stepcounterDoll}
+          mobileKeyImage={stepcounterPhoneMobile}
+          keyImage={stepcounterPhone}
+          tag="Fitness"
+          title="Step Challenges"
+          desc="Embark on a GPS-based ESG adventure with Adventure Hunt ( and the soon-to-come Eco Hunt ) around Hong Kong. Track your daily steps using Step Counter to achieve your health goals."
+        />
+        <CardRight 
+          name="vital-scanning"
+          mobileBg={vitalScanningBgMobile}
+          mobileElement1={vitalScanningMenMobile}
+          bg={vitalScanningBg}
+          element1={vitalScanningGraph}
+          element2={vitalScanningMen}
+          mobileKeyImage={vitalScanningPhoneMobile}
+          keyImage={vitalScanningPhone}
+          tag="Monitor"
+          title="Daily vital scan"
+          desc="Keep track of your health scoore every day to improve wellness over time."
+        />
+        <CardLeft 
+          name="deskercise"
+          mobileBg={deskerciseBgMobile}
+          mobileElement1={deskerciseWomenMobile}
+          bg={deskerciseBg}
+          element1={deskerciseDog}
+          element2={deskerciseWomen}
+          mobileKeyImage={deskercisePhoneMobile}
+          keyImage={deskercisePhone}
+          tag="Stretch"
+          title="Deskercise"
+          desc="Take your pocket stretch trainer with you anywhere to bid farewell to tight shoulders and neck."
+        />
+        <CardRight 
+          name="water-tracker"
+          mobileBg={waterTrackerBgMobile}
+          mobileElement1={waterTrackerMenFlowerMobile}
+          bg={waterTrackerBg}
+          element1={waterTrackerMenFlower}
+          element2={waterTrackerWatering}
+          mobileKeyImage={waterTrackerPhoneMobile}
+          keyImage={waterTrackerPhone}
+          tag="Hydration"
+          title="Water Tracker"
+          desc="Receive periodic reminders for hydration breaks to stay active throughtout the day."
+        />
+        <CardLeft 
+          name="mindful-pause"
+          mobileBg={mindfulPauseBgMobile}
+          mobileElement1={mindfulPauseMenMobile}
+          bg={mindfulPauseBg}
+          element1={mindfulPauseMen}
+          element2={mindfulPauseWomen}
+          mobileKeyImage={mindfulPausePhoneMobile}
+          keyImage={mindfulPausePhone}
+          tag="Breathe"
+          title="Mindful Pause"
+          desc="Take conscious control of your breathe to regulate your mind and alleviate stress."
+        />
+        <CardRight 
+          name="feel-good"
+          mobileBg={feelGoodBgMobile}
+          mobileElement1={feelGoodPlaylistMobile}
+          bg={feelGoodBg}
+          element1={feelGoodPlaylist}
+          element2={feelGoodBee}
+          mobileKeyImage={waterTrackerPhoneMobile}
+          keyImage={waterTrackerPhone}
+          tag="Booster"
+          title="Feel-good playlists"
+          desc="Listen to mood-boosting playlists tailored to your emotions to stay motivated and inspired."
+        />
       </div>
-
       <div className={`balance-path relative mt-32 px-5 bg-[#cddee6] py-10 flex flex-col justify-center items-center gap-3`}>
           <h1 className={`text-2xl text-center font-bold lg:text-5xl`}>Leading a balanced path</h1>
           <Image className={`lg:!w-[20%] my-0 mx-auto`} objectFit="contain" style={{ width: '40%', height: 'auto' }} src={dots} alt="dots" />
           <p className={`text-center`}>Stay tuned for these exciting features in our upcoming releases!</p>
           <div className={`grid grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 justify-center gap-3 mx-10 lg:gap-5 lg:mx-20 pb-10`}>
-            <div className={`card flex flex-col flex-nowrap`}>
+            <div className={`card flex flex-col flex-nowrap animate-fadeInUp [animation-timeline:view()] [animation-range: cover 0% cover 45%;]`}>
               <Image className={``} objectFit="contain" style={{ width: '100%', height: 'auto' }} src={coach} alt="coach" />
               <div className={`caption text-center bg-white rounded-b-3xl lg:rounded-b-[4.5rem] px-5`}>
                 <h2 className={`title text-[#387e78] text-xl my-3`}>Pocket fitness coach</h2>
                 <p className={`desc text-sm mb-5`}>Do squats and pushups more effectively under the guidance of our smart virtual coach.</p>
               </div>
             </div>
-            <div className={`card flex flex-col flex-nowrap`}>
+            <div className={`card flex flex-col flex-nowrap animate-fadeInUp [animation-timeline:view()] [animation-range: cover 0% cover 45%;]`}>
               <Image className={`rounded-t-3xl lg:rounded-t-[4.5rem]`} objectFit="contain" style={{ width: '100%', height: 'auto' }} src={socialScore} alt="socialScore" />
               <div className={`caption text-center bg-white rounded-b-3xl lg:rounded-b-[4.5rem] px-5`}>
                 <h2 className={`title text-[#387e78] text-xl my-3`}>Social coins</h2>
@@ -433,7 +276,58 @@ export default function Home() {
         </div>
     
       </div>
-    </>
+
+      </>
 
   );
 }
+
+
+function CardLeft({ name, mobileBg, mobileElement1, mobileKeyImage, bg, element1, element2, keyImage, tag, title, desc }){
+  return (
+    <div id={name} className={`w-full relative`}>
+      <Image className={`animate-fadeInLeft [animation-timeline:view()] [animation-range: cover 0% cover 45%;] block lg:hidden`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={mobileBg} alt={`${name}-bg-mobile`} />
+      <Image className={`animate-fadeInUp [animation-timeline:view()] [animation-range: cover 0% cover 45%;] block lg:hidden absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={mobileElement1} alt={`${name}-element1-mobile`} />
+
+      <Image className={`animate-fadeInLeft [animation-timeline:view()] hidden lg:block `} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={bg} alt={`${name}-bg`} />
+      <Image className={`animate-fadeInUp [animation-timeline:view(250px)] opacity-0 hidden lg:block absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={element1} alt={`${name}-element1`} />
+      <Image className={`animate-fadeInUp [animation-timeline:view(250px)] opacity-0 hidden lg:block absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={element2} alt={`${name}-element2`} />
+      <div className="absolute top-0 left-0 grid grid-cols-5 grid-rows-4 gap-4 w-full h-full">
+          <div className="col-span-2 row-span-4 ">
+            <Image className={`animate-fadeInRight [animation-timeline:view(250px)] [animation-range: cover 10% cover 45%] opacity-0 block lg:hidden`} fill src={mobileKeyImage} alt={`${name}-key-image-mobile`} />
+            <Image className={`animate-fadeInRight [animation-timeline:view(250px)] [animation-range: cover 10% cover 45%] opacity-0 hidden lg:block`} fill src={keyImage} alt={`${name}-key-image`} />
+          </div>
+          <div className="animate-fadeInUp [animation-timeline:view()] col-span-3 col-start-3 row-start-2">
+            <div className={`bg-white rounded-full py-1 px-7 inline-block text-sm`}>{tag}</div>
+            <h2 className={`font-extrabold text-3xl`}>{title}</h2>
+            <p className={`text-sm`}>{desc}</p>
+          </div>
+      </div>
+    </div>
+  )
+}
+
+function CardRight({ name, mobileBg, mobileElement1, mobileKeyImage, bg, element1, element2, keyImage, tag, title, desc }){
+  return (
+    <div id={name} className={`w-full relative`}>
+      <Image className={`animate-fadeInRight [animation-timeline:view()] [animation-range: cover 0% cover 45%;] block lg:hidden`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={mobileBg} alt={`${name}-bg-mobile`} />
+      <Image className={`animate-fadeInUp [animation-timeline:view()] [animation-range: cover 0% cover 45%;] block lg:hidden absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={mobileElement1} alt={`${name}-element1-mobile`} />
+
+      <Image className={`animate-fadeInRight [animation-timeline:view()] hidden lg:block `} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={bg} alt={`${name}-bg`} />
+      <Image className={`animate-fadeInUp [animation-timeline:view(250px)] opacity-0 hidden lg:block absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={element1} alt={`${name}-element1`} />
+      <Image className={`animate-fadeInUp [animation-timeline:view(250px)] opacity-0 hidden lg:block absolute top-0 left-0`} objectFit="cover" style={{ width: '100%', height: 'auto' }} src={element2} alt={`${name}-element2`} />
+      <div className="absolute top-0 left-0 grid grid-cols-5 grid-rows-4 gap-4 w-full h-full">
+        <div className="col-span-2 row-span-4 col-start-4">
+            <Image className={`animate-fadeInLeft [animation-timeline:view(250px)] [animation-range: cover 10% cover 45%] opacity-0 block lg:hidden`} fill src={mobileKeyImage} alt={`${name}-key-image-mobile`} />
+            <Image className={`animate-fadeInLeft [animation-timeline:view(250px)] [animation-range: cover 10% cover 45%] opacity-0 hidden lg:block`} fill src={keyImage} alt={`${name}-key-image`} />
+          </div>
+          <div className="animate-fadeInUp [animation-timeline:view()] col-span-3 row-start-2 ml-5">
+            <div className={`bg-white rounded-full py-1 px-7 inline-block text-sm`}>{tag}</div>
+            <h2 className={`font-extrabold text-3xl`}>{title}</h2>
+            <p className={`text-sm`}>{desc}</p>
+          </div>
+      </div>
+    </div>
+  )
+}
+
